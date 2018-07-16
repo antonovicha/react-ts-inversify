@@ -1,4 +1,8 @@
+import 'reflect-metadata';
+
 import * as React from "react";
+
+import './inversify.config.ts';
 
 import { UserService } from './userService';
 

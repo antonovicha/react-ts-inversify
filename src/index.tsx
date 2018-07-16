@@ -1,7 +1,3 @@
-import 'reflect-metadata';
-
-import './inversify.config.ts';
-
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App';
