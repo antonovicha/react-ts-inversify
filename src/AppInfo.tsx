@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import { inject } from 'inversify';
-
 import { UserService } from './userService';
+
+import { inject } from './myInjector';
 
 class AppInfo extends React.Component {
   @inject(UserService)
