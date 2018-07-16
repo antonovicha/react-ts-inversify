@@ -12,5 +12,10 @@ describe('AppInfo tests', () => {
     ReactDOM.render(<AppInfo />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
+
+  test('calls public method that calls service', () {
+    const sut = new AppInfo({});
+    sut.handleClick();
+  })
 });
 
