@@ -2,8 +2,8 @@ import { injectable } from 'inversify';
 
 @injectable()
 class UserService {
-  public foo(): any {
-    console.info('foo'); // tslint:disable-line
+  public foo(): string {
+    return 'foo'; // tslint:disable-line
   }
 }
 

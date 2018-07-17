@@ -1,11 +1,10 @@
-import { Container } from "inversify";
+import 'reflect-metadata';
 
-// import { UserService } from './userService';
+import { Container } from "inversify";
 
 const myContainer = new Container({
   autoBindInjectable: true,
   defaultScope: "Singleton"
 });
-// myContainer.bind<UserService>(UserService).toSelf();
 
 export default myContainer;

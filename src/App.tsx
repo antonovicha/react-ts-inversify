@@ -1,3 +1,5 @@
+import './inversify.config.ts';
+
 import * as React from 'react';
 
 import './App.css';
