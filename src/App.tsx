@@ -1,3 +1,4 @@
+// Must be imported first in order to import 'reflect-metadata' before other imports
 import './inversify.config.ts';
 
 import * as React from 'react';

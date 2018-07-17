@@ -1,3 +1,4 @@
+import container from './inversify.config';
 import { injectable } from 'inversify';
 
 @injectable()
@@ -6,5 +7,7 @@ class UserService {
     return 'foo'; // tslint:disable-line
   }
 }
+
+container.bind<UserService>(UserService).toSelf();
 
 export { UserService };
