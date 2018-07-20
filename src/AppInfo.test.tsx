@@ -3,6 +3,7 @@ import container from './inversify.config';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+
 import AppInfo from './AppInfo';
 import { UserService } from './userService';
 
@@ -10,7 +11,7 @@ describe('AppInfo tests', () => {
   beforeEach(() => {
     const mock: UserService = {
       foo: () => {
-        return 'I am mock of foo';
+        return 'I am injected mock of foo';
       }
     };
     // Option 1

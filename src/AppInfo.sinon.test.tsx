@@ -19,7 +19,7 @@ describe('AppInfo tests', () => {
     ReactDOM.render(<AppInfo />, div);
     ReactDOM.unmountComponentAtNode(div);
     const stub = sandbox.stub(UserService.prototype, "foo").callsFake(() => {
-      console.log('I am foo in sinon fake'); // tslint:disable-line
+      console.log('I am foo in sinon sandbox fake'); // tslint:disable-line
     });
     expect(stub.notCalled).toBeTruthy();
   });
@@ -27,7 +27,7 @@ describe('AppInfo tests', () => {
   test('calls public method that calls service', () => {
     const sut = new AppInfo({});
     const stub = sandbox.stub(UserService.prototype, "foo").callsFake(() => {
-      console.log('I am foo in sinon fake'); // tslint:disable-line
+      console.log('I am foo in sinon sandbox fake'); // tslint:disable-line
     });
     sut.handleClick();
     expect(stub.calledOnce).toBeTruthy();
