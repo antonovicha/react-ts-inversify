@@ -6,7 +6,7 @@ import { HelpService } from './helpService';
 jest.mock('./helpService');
 
 describe('AppHelp tests', () => {
-  const helpService: jest.Mock<HelpService> = HelpService as any;
+  const helpService: jest.MockInstance<HelpService> = HelpService as any;
 
   beforeEach(() => {
     helpService.mockClear();
@@ -20,13 +20,14 @@ describe('AppHelp tests', () => {
 
   test('calls public method that calls service', () => {
     // given
-    helpService.mockImplementation(() => {
+    const mockedHelpMe = jest.fn().mockImplementation(() => 'for mock');
+    const mock = helpService.mockImplementation(() => {
       return {
-        helpMe: () => {
-          return 'for mock';
-        }
+        helpMe: mockedHelpMe
       }
     });
+    expect(mock).not.toHaveBeenCalled();
+    expect(mockedHelpMe).not.toHaveBeenCalled();
     const sut = new AppHelp({});
     
     // when
@@ -34,6 +35,8 @@ describe('AppHelp tests', () => {
 
     // then
     expect(result).toBe('HELP wanted for mock');
+    expect(mock).toHaveBeenCalledTimes(1);
+    expect(mockedHelpMe).toHaveBeenCalledTimes(1);
   })
 });
 
