@@ -20,7 +20,7 @@ describe('AppHelp tests', () => {
 
   test('calls public method that calls service', () => {
     // given
-    const mockedHelpMe = jest.fn().mockImplementation(() => 'for mock');
+    const mockedHelpMe = jest.fn().mockReturnValue('for mock');
     const mock = helpService.mockImplementation(() => {
       return {
         helpMe: mockedHelpMe
