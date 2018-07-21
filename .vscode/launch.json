@@ -18,6 +18,27 @@
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Debug Jest tests",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts-ts",
+            "args": [
+                "--inspect-brk",
+                "test",
+                "--env=jsdom",
+                "--runInBand",
+                "--verbose",
+                "${fileBasename}",
+                // crappy workaround because of stubborn guys from CRA:
+                // https://github.com/facebook/create-react-app/issues/1137#issuecomment-279191193
+                // https://github.com/facebook/create-react-app/pull/533
+                "--coverage"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "console": "integratedTerminal"
         }
     ]
 }
